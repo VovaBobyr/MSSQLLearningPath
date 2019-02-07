@@ -1,4 +1,8 @@
-﻿--- Cration table
+﻿-----------------------------------------------------------------------
+-----    TOPICs 
+-----  Table Valuated Fucntions
+-----  Temp Table
+--- Cration table
 CREATE TABLE table1
 (id int,
 number int,
@@ -40,5 +44,14 @@ IF EXISTS (
     DROP FUNCTION fun_test_tabl_new
 GO
 
--- Testin function running
+-- Run function
 SELECT * FROM dbo.fun_test_tabl_new (1)
+
+-------------------------------------------------------------------------
+--- Temp table
+   CREATE TABLE #tmp(column1 INT, column2 INT, column3 MONEY)
+	INSERT INTO #tmp(column1, column2, column3)
+		SELECT id, number, summa 
+		FROM table1
+   --Затем по коду ниже Вы ее можете использовать, а в конце процедуры удалить ее 
+   DROP TABLE #tmp

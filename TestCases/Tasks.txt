@@ -1,0 +1,10 @@
+TestTask_170518.sql
+
+1. В одну итерацию Вывести Фамилия (Last_),  Имя (FirstUA),  Отчество (MiddleUA) в регистре 1-я буква прописная, остальные строчные.
+
+4. Кто ближайший именинник (NextBirth)? в Какой день недели выпадает день рождения (DOW)? Кого поздравляли в последний раз (LastBirth)? (состоянием на сегодня)
+
+
+select Receiver from TestTask_170518 
+where datepart(day, CONVERT(date, BirthDay, 104)) > datepart(day, getdate())
+and datepart(month, CONVERT(date, BirthDay, 104)) > datepart(month, getdate());
