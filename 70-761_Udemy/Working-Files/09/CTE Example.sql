@@ -10,7 +10,8 @@ WITH C AS
 )
 SELECT OrderYear, COUNT(DISTINCT SalesOrderID) AS NbrCustomers
 FROM C
-GROUP BY orderyear;
+GROUP BY orderyear
+ORDER BY orderyear;
 
 
 -- Multiple CTEs can be 'chained' together
@@ -30,3 +31,4 @@ C2 AS
 SELECT OrderYear, NbrCustomers
 FROM C2
 WHERE NbrCustomers>50
+ORDER BY OrderYear
